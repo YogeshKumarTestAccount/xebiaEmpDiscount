@@ -13,12 +13,16 @@ import com.xebia.main.service.DiscountPolicyService;
 import com.xebia.main.service.ItemService;
 import com.xebia.main.util.UserType;
 
-
+/**
+ * @author Yogesh Kumar
+ *
+ */
 /*
- * Cart Class to calculate complete to add items and contain the final net amount
+ * Cart Class to calculate complete to add items and contain the final net
+ * amount
  */
 @Service
-public class CartServiceImpl implements CartService{
+public class CartServiceImpl implements CartService {
 	private Map<ItemService, Integer> quantities;
 	private DiscountPolicyService discountPolicyService;
 	private User user;
@@ -33,10 +37,9 @@ public class CartServiceImpl implements CartService{
 		this.user = user;
 		this.discountPolicyService = discountPolicyService;
 	}
-	
+
 	public CartServiceImpl() {
 	}
-	
 
 	public double total() {
 		double result = 0;

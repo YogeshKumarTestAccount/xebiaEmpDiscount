@@ -13,7 +13,12 @@ The project is based on a SpringBoot Rest App Small Plugable Microservices to si
 * http://localhost:3000/swagger-ui.html#!/xebia45discount45controller/totalAmmountToBePaidAfterDiscountUsingPOST
 * JUnit for Unit Tests Test Coverage 100 Percent 
 * STS to run and test the program
+* Used Spring Boot Actuator
+  Spring Boot provides actuator to monitor and manage our application. Actuator is a tool which has HTTP endpoints. when application is       pushed to production, you can choose to manage and monitor your application using HTTP endpoints.
 
+* Management.port=4000.
+
+* Also Used DevTool but need to disable if we are in production.
 
 
 NOTE:For More Info please check the below Location attached required Screen to Understand the Project Structure And Unit Test Case Covering.

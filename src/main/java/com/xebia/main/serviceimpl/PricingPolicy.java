@@ -1,9 +1,12 @@
 package com.xebia.main.serviceimpl;
 
-import org.springframework.stereotype.Service;
-
 import com.xebia.main.service.ItemService;
 import com.xebia.main.util.ItemType;
+
+/**
+ * @author Yogesh Kumar
+ *
+ */
 
 /*
  * This Class to implement pricing at each item level
@@ -11,24 +14,25 @@ import com.xebia.main.util.ItemType;
 
 public class PricingPolicy implements ItemService {
 
-    private final ItemService baseItem;
-   
+	private final ItemService baseItem;
+
 	public PricingPolicy(ItemService baseItem) {
-        this.baseItem = baseItem;
-    }
-	public double getUnitPrice() { 
-    	return baseItem.getUnitPrice();
-    }
+		this.baseItem = baseItem;
+	}
 
-    public String getName() { 
-    	return baseItem.getName(); 
-    }
-    
-    public ItemType getType() {
-    	return baseItem.getType(); 
-    }
+	public double getUnitPrice() {
+		return baseItem.getUnitPrice();
+	}
 
-    public double priceForQuantity(int quantity) {
-        return baseItem.priceForQuantity(quantity);
-    }
+	public String getName() {
+		return baseItem.getName();
+	}
+
+	public ItemType getType() {
+		return baseItem.getType();
+	}
+
+	public double priceForQuantity(int quantity) {
+		return baseItem.priceForQuantity(quantity);
+	}
 }
