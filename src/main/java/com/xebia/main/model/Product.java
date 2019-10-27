@@ -11,11 +11,12 @@ import com.xebia.main.util.ItemType;
 /*
  * This Class for actual product items which you want to add.
  */
+
 public class Product implements ItemService {
 
-	private final String name;
-	private final double unitPrice;
-	private final ItemType type;
+	private  String name;
+	private  double unitPrice;
+	private  ItemType type;
 
 	public Product(String name, double priceInDollars, ItemType type) {
 		this.name = name;
@@ -38,4 +39,11 @@ public class Product implements ItemService {
 	public ItemType getType() {
 		return type;
 	}
+
+	public Product() {
+		
+		
+	}
+	
+	
 }

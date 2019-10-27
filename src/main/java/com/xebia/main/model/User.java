@@ -14,9 +14,9 @@ import com.xebia.main.util.UserType;
  */
 public class User {
 
-	private final UserType type;
-	private final String userName;
-	private final LocalDateTime joiningDate;
+	private  UserType type;
+	private  String userName;
+	private  LocalDateTime joiningDate;
 
 	/*
 	 * We can add other information as per future scope of the application.
@@ -45,5 +45,12 @@ public class User {
 	public LocalDateTime getJoiningDate() {
 		return joiningDate;
 	}
+
+	public User() {
+		super();
+	}
+	
+	
+	
 
 }
