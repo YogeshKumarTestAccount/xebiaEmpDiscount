@@ -53,12 +53,12 @@ public class XebiaDiscountController {
 		discountUserDetailDto.getListOfProduct().stream().forEach(product -> {
 
 			if (product.getType().equals(ItemType.GROCERY)) {
-				ItemService groceryItem = new Product("Rice", 20, ItemType.GROCERY);
+				ItemService groceryItem = new Product(product.getName(), product.getUnitPrice(), ItemType.GROCERY);
 				cartService.add(groceryItem, discountUserDetailDto.getNumberOfGroceryItem());
 			}
 
 			if (product.getType().equals(ItemType.OTHER)) {
-				ItemService OtherItem = new Product("Rice", 20, ItemType.OTHER);
+				ItemService OtherItem = new Product(product.getName(), product.getUnitPrice(), ItemType.OTHER);
 				cartService.add(OtherItem, discountUserDetailDto.getNumberOfOtherItem());
 			}
 
