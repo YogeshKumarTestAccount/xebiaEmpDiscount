@@ -29,10 +29,13 @@ public class XebiaDiscountController {
 	@Autowired
 	private CartService cartService;
 
+	@SuppressWarnings("unlikely-arg-type")
 	@PostMapping(value = "/xebia/totalDiscount/")
 	public double totalAmmountToBePaidAfterDiscount(@RequestBody DiscountUserDetailDto discountUserDetailDto) {
 
 		String userName = discountUserDetailDto.getUser().getUserName();
+		final String GROCERY="GROCERY";
+		final String OTHER="OTHER";
 
 		UserType userType = discountUserDetailDto.getUser().getType();
 
@@ -52,13 +55,13 @@ public class XebiaDiscountController {
 
 		discountUserDetailDto.getListOfProduct().stream().forEach(product -> {
 
-			if (product.getType().equals(ItemType.GROCERY)) {
-				ItemService groceryItem = new Product(product.getName(), product.getUnitPrice(), ItemType.GROCERY);
+			if (product.getType().name().toString().equals(GROCERY)) {
+				ItemService groceryItem = new Product(product.getName(), product.getUnitPrice(),ItemType.GROCERY );
 				cartService.add(groceryItem, discountUserDetailDto.getNumberOfGroceryItem());
 			}
 
-			if (product.getType().equals(ItemType.OTHER)) {
-				ItemService OtherItem = new Product(product.getName(), product.getUnitPrice(), ItemType.OTHER);
+			if (product.getType().name().toString().equals(OTHER)) {
+				ItemService OtherItem = new Product(product.getName(), product.getUnitPrice(),ItemType.OTHER);
 				cartService.add(OtherItem, discountUserDetailDto.getNumberOfOtherItem());
 			}
 
